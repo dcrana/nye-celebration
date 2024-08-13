@@ -20,6 +20,11 @@ export const formValidations = {
           "Only JPG, JPEG and PNG files are allowed"
         );
       },
+      fileSize: (file: FileList) => {
+        return (
+          file[0].size <= 2 * 1024 * 1024 || "File size should less than 2 MB"
+        );
+      },
     },
   },
   [FIRST_NAME]: {
