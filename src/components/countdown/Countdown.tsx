@@ -1,21 +1,19 @@
-import { useState, useEffect, FC } from 'react'
-import styles from './countdown.module.scss'
+import { useState, useEffect, FC, useCallback } from "react";
+import styles from "./countdown.module.scss";
 
 interface CountdownProps {
-  targetDate: Date
+  targetDate: Date;
 }
 
 const Countdown: FC<CountdownProps> = ({ targetDate }) => {
-  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft())
-
-  function calculateTimeLeft() {
-    const difference = +targetDate - +new Date()
+  const calculateTimeLeft = useCallback(() => {
+    const difference = +targetDate - +new Date();
     let timeLeft = {
       days: 0,
       hours: 0,
       minutes: 0,
       seconds: 0,
-    }
+    };
 
     if (difference > 0) {
       timeLeft = {
@@ -23,19 +21,22 @@ const Countdown: FC<CountdownProps> = ({ targetDate }) => {
         hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
         minutes: Math.floor((difference / 1000 / 60) % 60),
         seconds: Math.floor((difference / 1000) % 60),
-      }
+      };
     }
 
-    return timeLeft
-  }
+    return timeLeft;
+  }, [targetDate]);
 
+  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+
+  // setTimout
   useEffect(() => {
     const timer = setTimeout(() => {
-      setTimeLeft(calculateTimeLeft())
-    }, 1000)
+      setTimeLeft(calculateTimeLeft());
+    }, 1000);
 
-    return () => clearTimeout(timer)
-  })
+    return () => clearTimeout(timer);
+  });
 
   return (
     <div className={styles.countdown}>
@@ -49,7 +50,7 @@ const Countdown: FC<CountdownProps> = ({ targetDate }) => {
         ))}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Countdown
+export default Countdown;

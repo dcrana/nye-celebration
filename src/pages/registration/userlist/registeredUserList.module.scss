@@ -1,0 +1,52 @@
+.registrantList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  background-color: var(--codegrey);
+  color: var(--white);
+}
+
+.registrant {
+  background-color: var(--minshaft);
+  border-radius: 10px;
+  padding: 20px;
+  width: 100%;
+  max-width: 300px;
+  box-sizing: border-box;
+  color: var(--white);
+  box-shadow: 0 4px 6px var(--black);
+  text-align: center;
+
+  img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: 2px solid var(--primary);
+    margin-bottom: 10px;
+  }
+
+  h3 {
+    margin-top: 10px;
+    color: var(--secondary);
+  }
+
+  p {
+    margin: 5px 0;
+    color: var(--white);
+  }
+}
+
+.noRecordsFound {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: var(--minshaft);
+  color: var(--primary);
+  border-radius: 10px;
+  text-align: center;
+  font-size: 18px;
+  width: 100%;
+  max-width: 300px;
+}
