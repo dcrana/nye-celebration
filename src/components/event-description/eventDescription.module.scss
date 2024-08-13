@@ -1,0 +1,15 @@
+.eventDescription {
+  background-color: var(--codegrey);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  title {
+    color: var(--secondary);
+    margin-bottom: 1rem;
+  }
+  .description {
+    line-height: 1.6;
+    width: 50%;
+    margin: auto;
+  }
+}

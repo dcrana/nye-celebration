@@ -1,0 +1,19 @@
+.home {
+  text-align: center;
+
+  .partyDate {
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+
+    .label {
+      color: var(--secondary);
+      font-weight: 700;
+      margin-right: 0.5rem;
+    }
+
+    .date {
+      color: var(--white);
+      font-weight: bold;
+    }
+  }
+}

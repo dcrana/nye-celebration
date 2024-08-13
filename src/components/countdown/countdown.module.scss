@@ -1,0 +1,38 @@
+.countdown {
+  background-color: var(--codegrey);
+  border-radius: 8px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+
+  .title {
+    color: var(--secondary);
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+  }
+  .timerContainer {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    .timerItem {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: var(--minshaft);
+      border-radius: 8px;
+      padding: 1rem;
+      min-width: 100px;
+      .timerValue {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: var(--primary);
+      }
+
+      .timerLabel {
+        font-size: 1rem;
+        color: var(--secondary);
+        text-transform: uppercase;
+        margin-top: 0.5rem;
+      }
+    }
+  }
+}
